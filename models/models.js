@@ -2,11 +2,10 @@ const { boolean } = require("joi");
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    "mongodb://127.0.0.1:27017/books",
-    { useNewUrlParser: true },
-    { useUnifiedTopology: true }
-  )
+  .connect("mongodb://127.0.0.1:27017/books", {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+  })
   .then(() => console.log("Connected Successfully"))
   .catch((err) => console.error(`there as been an error ${err}`));
 
